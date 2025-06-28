@@ -1,0 +1,6 @@
+flask
+flask-cors
+phidata
+openai
+duckduckgo-search 
+sqlalchemy

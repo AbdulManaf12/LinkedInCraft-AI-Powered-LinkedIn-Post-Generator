@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedInCraft - AI-Powered LinkedIn Post Generator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <i class="fab fa-linkedin"></i>
+          <h1>LinkedInCraft</h1>
+        </div>
+        <p class="subtitle">
+          Transform your ideas into viral LinkedIn content with AI
+        </p>
+      </header>
+
+      <main class="main">
+        <div class="input-section">
+          <div class="input-card">
+            <h2>What's your topic?</h2>
+            <form id="postForm">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="topicInput"
+                  placeholder="Enter your blog post topic or news headline..."
+                  required
+                />
+                <button type="submit" id="generateBtn">
+                  <span class="btn-text">Generate Post</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="output-section" id="outputSection">
+          <div class="loading" id="loadingState">
+            <div class="spinner"></div>
+            <p>Crafting your LinkedIn post...</p>
+          </div>
+
+          <div class="result-card" id="resultCard">
+            <div class="result-header">
+              <h3>Your Generated LinkedIn Post</h3>
+              <div class="actions">
+                <button class="action-btn copy-btn" id="copyBtn">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+                <button class="action-btn share-btn" id="shareBtn">
+                  <i class="fab fa-linkedin"></i>
+                  Share on LinkedIn
+                </button>
+              </div>
+            </div>
+            <div class="post-content" id="postContent"></div>
+            <div class="post-stats">
+              <div class="stat">
+                <i class="fas fa-eye"></i>
+                <span>Ready to engage</span>
+              </div>
+              <div class="stat">
+                <i class="fas fa-hashtag"></i>
+                <span>Optimized hashtags</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          &copy; 2025 LinkedInCraft. Transform your ideas into viral content with AI.
+        </p>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast">
+      <i class="fas fa-check-circle"></i>
+      <span>Post copied to clipboard!</span>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
